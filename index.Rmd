@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-csl: acta-scientiae-veterinariae.csl
+csl: institute-of-mathematical-statistics.csl
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
@@ -16,7 +16,7 @@ github-repo: xiaoxl/RDS22
 
 
 
-# About 
+# About {-}
 This is the lecture notes for R part in STAT 2304 during 2022 Fall semester.
 There are many ways to write content in Jupyter Book. This short section
 covers a few tips for how to do so.

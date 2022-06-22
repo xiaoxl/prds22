@@ -1,0 +1,38 @@
+
+## Exercises
+### Indentation
+Please tell the differences between the following codes. If you don't understand `for` don't worry about it. Just focus on the indentation and try to understand how the codes work.
+
+
+```{python}
+for i in range(10):
+    print('Hello world!')
+print('Hello world!')
+```
+
+```{python}
+for i in range(10):
+    print('Hello world!')
+    print('Hello world!')
+```
+
+```{python}
+# for i in range(10):
+# print('Hello world!')
+# print('Hello world!')
+```
+---
+```{python}
+for i in range(10):
+    pass
+print('Hello world!')
+print('Hello world!')
+```
+
+### Play with built-in data types
+```{python}
+print(True and True)
+print(True or True)
+print(False and True)
+print((1+1>2) or (1-1<1))
+```

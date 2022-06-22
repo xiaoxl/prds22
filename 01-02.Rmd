@@ -1,0 +1,45 @@
+
+
+## Built-in Types
+
+There are severl built-in data structures in Python. Here is an (incomplete) list:
+- `None`
+- Boolean -- `True`, `False`
+- Numeric Types — `int`, `float`, `complex`
+- Sequence Types — `list`
+- Text Sequence Type — `str`
+- Map type - `dict`
+
+We will cover numeric types and strings in this section. The rests are either simple that are self-explained, or not simple that will be discussed later.
+
+
+You may always use `type(x)` to detect the type of the object `x`.
+
+### Numeric types and math expressions
+Numeric types are represented by numbers. If there are no confusions, Python will automatically detect the type. 
+```{python}
+x = 1 # x is an int.
+y = 2.0 # y is a float.
+```
+Python can do math just like other programming languages. The basic math operations are listed as follows.
+- `+`, `-`, `*`, `/`, `>`, `<`, `>=`, `<=` works as normal.
+- `**` is the power operation.
+- `%` is the mod operation.
+- `!=` is `not equal`
+
+### Strings
+Scalars are represented by numbers and strings are represented by quotes. Example:
+```python
+x = 1       # x is a scalar.
+y = 's'     # y is a string with one letter.
+z = '0'     # z loos like a number, but it is a string.
+w = "Hello" # w is a string with double quotes.
+```
+Here are some facts.
+1. For strings, you can use either single quotes or double quotes.
+2. `\` is used to denote escaped words. You may find the list [Here](https://www.w3schools.com/python/gloss_python_escape_characters.asp). 
+3. There are several types of scalars, like `int`, `float`, etc.. Usually Python will automatically determine the type of the data, but sometimes you may still want to declare them manually.
+4. 
+
+
+There is a very subtle relations between the variable / constant and the name of the variable / constant. We 

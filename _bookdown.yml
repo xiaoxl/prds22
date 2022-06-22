@@ -1,0 +1,26 @@
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+output_dir: "docs"
+rmd_files: ["index.Rmd", 
+            "01-.Rmd",
+            "01-01.Rmd",
+            "01-02.Rmd",
+            "01-03.Rmd",
+            "01-04.Rmd",
+            "01-05-ex.Rmd",
+            "01-06-proj.Rmd",
+            "02-.Rmd",
+            "02-01.Rmd",
+            "02-02.Rmd",
+            "02-03.Rmd",
+            "02-04-ex.Rmd",
+            "02-05-proj.Rmd",
+            "03-.Rmd",
+            "03-01.Rmd",
+            "04-.Rmd",
+            "04-01.Rmd",
+            "05-.Rmd",
+            "05-01.Rmd",
+            "references.Rmd"]

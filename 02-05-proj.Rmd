@@ -1,0 +1,15 @@
+## proj
+
+### key
+
+
+```{python}
+s = 'abcdeeekknn'
+print('\033[91m'+'ssss'+'\033[0m'+'sdfdsfa'+'\033[91m'+'ssss'+'\033[0m')
+```
+
+### project
+
+- open and parse a CSV file
+- do some operations
+- decipher (replace letters / frequency analysis)

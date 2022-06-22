@@ -1,0 +1,586 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Python/R for Data Science 2022 Fall},
+  pdfauthor={Xinli Xiao},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Python/R for Data Science 2022 Fall}
+\author{Xinli Xiao}
+\date{2022-06-22}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{about}{%
+\chapter{About}\label{about}}
+
+This is the lecture notes for R part in STAT 2304 during 2022 Fall semester.
+There are many ways to write content in Jupyter Book. This short section
+covers a few tips for how to do so.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{part-part-i-python}{%
+\part*{Part I: Python}\label{part-part-i-python}}
+\addcontentsline{toc}{part}{Part I: Python}
+
+\hypertarget{python-fundamentals}{%
+\chapter{Python Fundamentals}\label{python-fundamentals}}
+
+\hypertarget{why-python}{%
+\section{Why Python?}\label{why-python}}
+
+\hypertarget{python-is-easy-to-use}{%
+\subsection{Python is easy to use}\label{python-is-easy-to-use}}
+
+Programmers familiar with traditional languages will find it easy to learn Python. All of the familiar constructs---loops, conditional statements, arrays, and so forth---are included, but many are easier to use in Python. Here are a few of the reasons why:
+- Types are associated with objects, not variables. A variable can be assigned a value of any type, and a list can contain objects of many types. This also means that type casting usually isn't necessary and that your code isn't locked into the straitjacket of predeclared types.
+- Python typically operates at a much higher level of abstraction. This is partly the result of the way the language is built and partly the result of an extensive standard code library that comes with the Python distribution. A program to download a web page can be written in two or three lines!
+- Syntax rules are very simple. Although becoming an expert Pythonista takes time
+and effort, even beginners can absorb enough Python syntax to write useful
+code quickly.
+
+Python is well suited for rapid application development. It isn't unusual for coding an application in Python to take one-fifth the time it would in C or Java and to take as little as one-fifth the number of lines of the equivalent C program. This depends on the particular application, of course; for a numerical algorithm performing mostly integer arithmetic in for loops, there would be much less of a productivity gain. For the average application, the productivity gain can be significant.
+
+\hypertarget{python-is-expressive}{%
+\subsection{Python is expressive}\label{python-is-expressive}}
+
+\hypertarget{python-is-readable}{%
+\subsection{Python is readable}\label{python-is-readable}}
+
+\citet{Klo2021}
+\citet{Ram2015}
+\citet{Sha2017}
+\citet{Sha2017a}
+\citet{Ced2018}
+\citet{You2020}
+
+\hypertarget{hello-world}{%
+\section{Hello world!}\label{hello-world}}
+
+We will mainly focus on this code editor mode at the beginning and check our results or do some simple computations in the console.
+
+Notebook is another very popular mode to use Python. We will talk about it later.
+
+\hypertarget{set-up-python-environment-using-ides}{%
+\subsection{Set up Python environment using IDEs}\label{set-up-python-environment-using-ides}}
+
+Please follow the following steps to run your first line of Python codes.
+
+We will talk about the relation between Python and Anaconda and more about packages sometime later.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Go to \href{https://www.anaconda.com/}{Anaconda download page}. Download and install Anaconda.
+\item
+  There are several IDEs for Python bundled with Anaconda. Pick any one you like. I personally use VS Code. Here we use Spyder as an example for now since it doesn't require any configurations.
+\item
+  Here is a screenshot of Spyder 5.1.5.
+\item
+  The right lower window is the console. Type the following code, and run. If \texttt{Hello\ world!} is displayed, the Python environment is set up successfully. Now you can start to play with Python!
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+\end{verbatim}
+
+\hypertarget{code-editor}{%
+\subsection{Code editor}\label{code-editor}}
+
+The left window is called \emph{Code Editor}. You can write multiple lines of codes in the code editor and run them all together. The output results might appear in the console.
+
+As shown in the screenshot, when press \texttt{F5} to run file, the codes in the code editor will be excuted line by line.
+
+The code in the example is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Another line\textquotesingle{}}\NormalTok{)}
+\CommentTok{\# Everything after \# are comments that won\textquotesingle{}t be excuted.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Another line
+\end{verbatim}
+
+\hypertarget{indentation}{%
+\subsection{Indentation}\label{indentation}}
+
+One key feature about Python is that its structures (blocks) is determined by \textbf{Indentation}.
+
+Let's compare with other languages. Let's take \texttt{C} as an example.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#/*This is a C function.*/}
+\CommentTok{\#int f(int x)\{return x;\}}
+\end{Highlighting}
+\end{Shaded}
+
+The block is defined by \texttt{\{\}} and lines are separated by \texttt{;}. \texttt{space} and \texttt{newline} are not important when \texttt{C} runs the code. It is recommended to write codes in a ``beautiful, stylish'' format for readibility, as follows. However it is not mandatary.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#/*This is a C function.*/}
+\CommentTok{\#int f(int x) \{}
+\CommentTok{\#    return x;}
+\CommentTok{\#\}}
+\end{Highlighting}
+\end{Shaded}
+
+In Python, blocks starts from \texttt{:} and then are determined by indents. Therefore you won't see a lot of \texttt{\{\}} in Python, and the ``beautiful, stylish'' format is mandatary.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This is a Python function.}
+\KeywordTok{def}\NormalTok{ f(x):}
+    \ControlFlowTok{return}\NormalTok{ x}
+\end{Highlighting}
+\end{Shaded}
+
+The default value for indentation is 4 spaces, which can be changed by users. We will just use the default value in this course.
+
+\hypertarget{built-in-types}{%
+\section{Built-in Types}\label{built-in-types}}
+
+There are severl built-in data structures in Python. Here is an (incomplete) list:
+- \texttt{None}
+- Boolean -- \texttt{True}, \texttt{False}
+- Numeric Types --- \texttt{int}, \texttt{float}, \texttt{complex}
+- Sequence Types --- \texttt{list}
+- Text Sequence Type --- \texttt{str}
+- Map type - \texttt{dict}
+
+We will cover numeric types and strings in this section. The rests are either simple that are self-explained, or not simple that will be discussed later.
+
+You may always use \texttt{type(x)} to detect the type of the object \texttt{x}.
+
+\hypertarget{numeric-types-and-math-expressions}{%
+\subsection{Numeric types and math expressions}\label{numeric-types-and-math-expressions}}
+
+Numeric types are represented by numbers. If there are no confusions, Python will automatically detect the type.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{1} \CommentTok{\# x is an int.}
+\NormalTok{y }\OperatorTok{=} \FloatTok{2.0} \CommentTok{\# y is a float.}
+\end{Highlighting}
+\end{Shaded}
+
+Python can do math just like other programming languages. The basic math operations are listed as follows.
+- \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{\textgreater{}}, \texttt{\textless{}}, \texttt{\textgreater{}=}, \texttt{\textless{}=} works as normal.
+- \texttt{**} is the power operation.
+- \texttt{\%} is the mod operation.
+- \texttt{!=} is \texttt{not\ equal}
+
+\hypertarget{strings}{%
+\subsection{Strings}\label{strings}}
+
+Scalars are represented by numbers and strings are represented by quotes. Example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{1}       \CommentTok{\# x is a scalar.}
+\NormalTok{y }\OperatorTok{=} \StringTok{\textquotesingle{}s\textquotesingle{}}     \CommentTok{\# y is a string with one letter.}
+\NormalTok{z }\OperatorTok{=} \StringTok{\textquotesingle{}0\textquotesingle{}}     \CommentTok{\# z loos like a number, but it is a string.}
+\NormalTok{w }\OperatorTok{=} \StringTok{"Hello"} \CommentTok{\# w is a string with double quotes.}
+\end{Highlighting}
+\end{Shaded}
+
+Here are some facts.
+1. For strings, you can use either single quotes or double quotes.
+2. \texttt{\textbackslash{}} is used to denote escaped words. You may find the list \href{https://www.w3schools.com/python/gloss_python_escape_characters.asp}{Here}.
+3. There are several types of scalars, like \texttt{int}, \texttt{float}, etc.. Usually Python will automatically determine the type of the data, but sometimes you may still want to declare them manually.
+4.
+
+There is a very subtle relations between the variable / constant and the name of the variable / constant. We
+
+\hypertarget{flows}{%
+\section{Flows}\label{flows}}
+
+\hypertarget{logic}{%
+\section{Logic}\label{logic}}
+
+\hypertarget{exercises}{%
+\section{Exercises}\label{exercises}}
+
+\hypertarget{indentation-1}{%
+\subsection{Indentation}\label{indentation-1}}
+
+Please tell the differences between the following codes. If you don't understand \texttt{for} don't worry about it. Just focus on the indentation and try to understand how the codes work.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{10}\NormalTok{):}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{10}\NormalTok{):}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+## Hello world!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# for i in range(10):}
+\CommentTok{\# print(\textquotesingle{}Hello world!\textquotesingle{})}
+\CommentTok{\# print(\textquotesingle{}Hello world!\textquotesingle{})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{10}\NormalTok{):}
+    \ControlFlowTok{pass}
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Hello world!\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Hello world!
+\end{verbatim}
+
+\hypertarget{play-with-built-in-data-types}{%
+\subsection{Play with built-in data types}\label{play-with-built-in-data-types}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\VariableTok{True} \KeywordTok{and} \VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## True
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\VariableTok{True} \KeywordTok{or} \VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## True
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\VariableTok{False} \KeywordTok{and} \VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## False
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{((}\DecValTok{1}\OperatorTok{+}\DecValTok{1}\OperatorTok{\textgreater{}}\DecValTok{2}\NormalTok{) }\KeywordTok{or}\NormalTok{ (}\DecValTok{1}\OperatorTok{{-}}\DecValTok{1}\OperatorTok{\textless{}}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## True
+\end{verbatim}
+
+\hypertarget{projects}{%
+\section{Projects}\label{projects}}
+
+jupyter notebook
+
+\hypertarget{gnomic-data}{%
+\subsection{Gnomic data}\label{gnomic-data}}
+
+lists of data
+
+\hypertarget{more-advanced-techniques}{%
+\chapter{more advanced techniques}\label{more-advanced-techniques}}
+
+\hypertarget{list}{%
+\section{List}\label{list}}
+
+\hypertarget{dict}{%
+\section{dict}\label{dict}}
+
+\hypertarget{numpy-and-pandas}{%
+\section{numpy and pandas}\label{numpy-and-pandas}}
+
+\hypertarget{exercises-1}{%
+\section{exercises}\label{exercises-1}}
+
+\hypertarget{proj}{%
+\section{proj}\label{proj}}
+
+\hypertarget{key}{%
+\subsection{key}\label{key}}
+
+\hypertarget{project}{%
+\subsection{project}\label{project}}
+
+\begin{itemize}
+\tightlist
+\item
+  open and parse a CSV file
+\item
+  do some operations
+\item
+  decipher (replace letters / frequency analysis)
+\end{itemize}
+
+\hypertarget{classespackages-for-python}{%
+\chapter{Classes/Packages for Python}\label{classespackages-for-python}}
+
+\hypertarget{functions}{%
+\section{functions}\label{functions}}
+
+\hypertarget{packages}{%
+\section{packages}\label{packages}}
+
+\hypertarget{classes}{%
+\section{classes}\label{classes}}
+
+\hypertarget{virenev}{%
+\section{virenev}\label{virenev}}
+
+\hypertarget{ex}{%
+\section{ex}\label{ex}}
+
+\hypertarget{proj-1}{%
+\section{proj}\label{proj-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  clean commented code, use of functions
+\item
+  write classes
+\item
+  folllow-up: geospatial data based analysis in python
+\end{itemize}
+
+\hypertarget{python-notebooks}{%
+\chapter{Python Notebooks}\label{python-notebooks}}
+
+\hypertarget{notebooks}{%
+\section{notebooks}\label{notebooks}}
+
+\hypertarget{ex-1}{%
+\section{ex}\label{ex-1}}
+
+\hypertarget{proj-2}{%
+\section{proj}\label{proj-2}}
+
+\hypertarget{part-part-ii-r}{%
+\part*{Part II: R}\label{part-part-ii-r}}
+\addcontentsline{toc}{part}{Part II: R}
+
+\hypertarget{r-fundamentals}{%
+\chapter{R Fundamentals}\label{r-fundamentals}}
+
+ddd
+
+\hypertarget{hello-world-for-r}{%
+\section{Hello world for R}\label{hello-world-for-r}}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

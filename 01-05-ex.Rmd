@@ -36,3 +36,8 @@ print(True or True)
 print(False and True)
 print((1+1>2) or (1-1<1))
 ```
+
+### Play with strings
+
+
+

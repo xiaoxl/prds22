@@ -41,5 +41,14 @@ Here are some facts.
 3. There are several types of scalars, like `int`, `float`, etc.. Usually Python will automatically determine the type of the data, but sometimes you may still want to declare them manually.
 4. 
 
+Although `str` is a built-in type, there are tons of tricks with `str`, and there are tons of packages related to strings. Generally speaking, to play with strings, we are interested in two types of questions.
+- Put information together to form a string.
+- Extract information from a string.
+We briefly talk about these two tasks.
+
+#### concat
+
+#### split
+
 
 There is a very subtle relations between the variable / constant and the name of the variable / constant. We 
